@@ -6,7 +6,6 @@ void water() {
     (String) MoistWant + "% | " + (String) PhWant};
   if ((ongoing) and (water_timer[0]/3600000.0 >= hours_between)) {
     print_screen(watering_screen);
-    water_timer[1] = millis();
     delay(100);
 
     while (get_moisture() < MoistWant) {
@@ -34,7 +33,8 @@ void water() {
       delay(15000);
       motorOff(0);
     }    
-    
+
     delay(100);
+    water_timer[1] = millis();
   }
 }
